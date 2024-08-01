@@ -4,7 +4,6 @@ import { Column } from "primereact/column";
 import { useLazyTable } from "../hooks/useLazyTable";
 import { useFetchLocations } from "../hooks/useFetchLocation";
 import { useUserLocation } from "../contexts/UserLocationContext";
-import { Location } from "../types";
 
 export const LocationList: React.FC = () => {
   const { lazyState, onPage, onSort, onFilter } = useLazyTable();
@@ -25,6 +24,7 @@ export const LocationList: React.FC = () => {
 
   return (
     <div className="card">
+      <h2>Locations </h2>
       <DataTable
         value={data?.locations || []}
         lazy

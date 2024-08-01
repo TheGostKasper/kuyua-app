@@ -38,7 +38,7 @@ export const MapSetViewHandler = ({
 
   useEffect(() => {
     if (location) {
-      map.setView([location.latitude, location.longitude], 5);
+      map.setView([location.latitude, location.longitude], 4);
     }
   }, [map, location]);
 

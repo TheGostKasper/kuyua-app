@@ -19,10 +19,10 @@ const MapComponent = () => {
     <div style={{ height: "100%" }}>
       <MapContainer
         center={[location.latitude, location.longitude]}
-        zoom={5}
-        maxZoom={8}
+        zoom={4}
+        maxZoom={13}
         minZoom={2}
-        style={{ height: "700px", width: "100%" }}
+        style={{ height: "400px", width: "100%" }}
         wheelDebounceTime={500}
       >
         <MapSetViewHandler location={location} />
