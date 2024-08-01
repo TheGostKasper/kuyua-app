@@ -4,6 +4,8 @@
 
 This application allows users to explore and find the nearest locations on a map. The main features include displaying locations on a map, listing all locations, and dynamically updating the map center based on user interactions.
 
+![alt text](image.png)
+
 ## Features
 
 - **Map Display**: The map displays the nearest locations based on the current center. When the map center changes, it fetches and displays the nearest locations to the new center.
