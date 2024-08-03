@@ -12,23 +12,23 @@ const MapComponent = () => {
   const {
     data: locations,
     isError,
-    isLoading,
+    // isLoading,
   } = useFetchLocationsRadius(
     location?.latitude || 0,
     location?.longitude || 0
   );
 
   if (!location) return <Loading message="Loading Map..." />;
-  if (isLoading) return <Loading message="Loading Locations..." />;
+  // if (isLoading) return <Loading message="Loading Locations..." />; // add it back when you fix the flickering issue
   if (isError) return <Error message="Failed to load locations." />;
   return (
-    <div style={{ height: "100%" }}>
+    <div style={{ minHeight: "600px", height: "100%" }}>
       <MapContainer
         center={[location.latitude, location.longitude]}
         zoom={4}
         maxZoom={13}
         minZoom={2}
-        style={{ height: "400px", width: "100%" }}
+        style={{ height: "600px", width: "100%" }}
         wheelDebounceTime={500}
       >
         <MapSetViewHandler location={location} />
