@@ -39,7 +39,7 @@ Due to the use of `faker` and in-memory storage, other caching services were not
 
 ## Running the Application
 
-To run the application, use Docker Compose to build and start the client and server services.
+To run the application, use Docker Compose to build and start the client and server services Or use live serve .
 
 ### Docker Compose
 
@@ -54,6 +54,30 @@ Make sure you have Docker and Docker Compose installed. Then, follow these steps
 - Client: http://localhost:3000
 - Server: http://localhost:5555 
 
+### Npm concurrently
+
+Make sure you have node installed. Then, follow these steps:
+
+1. In App folder run 
+```sh
+npm install
+```
+2. navigate to `client` folder 
+```sh
+npm install
+```
+3. navigate to `server` folder 
+```sh
+npm install
+```
+4. To run concurrently `client` & `server` run cmd in app folder
+```sh
+npm start
+```
+
+5. Access the application:
+- Client: http://localhost:3000
+- Server: http://localhost:5555 
 
 ## Technical Details
 
