@@ -4,17 +4,23 @@ import { useUserLocation } from "../contexts/UserLocationContext";
 import { useFetchLocationsRadius } from "../hooks/useFetchLocation";
 import { MapEventHandler, MapSetViewHandler } from "./MapEventHandler";
 import MarkerContainer from "./Marker";
+import { Error, Loading } from "../shared/loadingError";
 
 const MapComponent = () => {
   const { location, setLocation } = useUserLocation();
 
-  const { data: locations } = useFetchLocationsRadius(
+  const {
+    data: locations,
+    isError,
+    isLoading,
+  } = useFetchLocationsRadius(
     location?.latitude || 0,
     location?.longitude || 0
   );
 
-  if (!location) return <p>Loading Map...</p>;
-
+  if (!location) return <Loading message="Loading Map..." />;
+  if (isLoading) return <Loading message="Loading Locations..." />;
+  if (isError) return <Error message="Failed to load locations." />;
   return (
     <div style={{ height: "100%" }}>
       <MapContainer
