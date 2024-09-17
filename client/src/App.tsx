@@ -6,11 +6,14 @@ import { LocationList } from "./components/LocationList";
 import UserLocationWrapper from "./components/UserLocationWrapper";
 import { UserLocationProvider } from "./contexts/UserLocationContext";
 import { Tooltip } from "primereact/tooltip";
+import Todo from "./features/todo";
+import './index.css';
 
 const App: React.FC = () => {
   return (
     <div className="app-container">
-      <UserLocationProvider>
+      <Todo />
+      {/* <UserLocationProvider>
         <div>
           <h2>
             Explore
@@ -27,7 +30,7 @@ const App: React.FC = () => {
           <UserLocationWrapper />
         </div>
         <LocationList />
-      </UserLocationProvider>
+      </UserLocationProvider> */}
     </div>
   );
 };
